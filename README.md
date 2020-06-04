@@ -1,18 +1,24 @@
 
-This Program will find repetitions and Jums in an audio file with reference to another audio file. It uses MLP to predict the positions where repetions occurs. Recommend to run using tf2.2 with GPU .
+This Program will find repetitions and Jumps in an audio file with reference to another audio file. It uses MLP to predict the positions where repetions occurs. Recommend to run using tf2.2 with GPU .
 
- #######Requirements#########
+Requirements:
+
 tensorflow 2.2
 pytables
 numpy and scipy
 pydub 
 librosa
-####### File description ######
+
+File descriptions:
+
 generate_dataset.py -> Generate the Xset and Y for training ANN
 train_net.py -> Train the ANN from the generated data and store the model model_net.h5
 predit.py -> Predict the random values which indicate the positions of reps from two audio files
 split.py -> generate a reps audio file from an input audio 
+
+
 ########## How to exceute ######
+
 Available audio files are stored in thesource directory. If the size of the audio mp3 is bigger than 
 3mb , adjust the maximum_length variable in both generate_dataset.py and predit.py  files. This can be achieved by trial and error.
 run python3 generate_dataset.py to generate the stft features and store it in Xdata.h5 file in train directory.
